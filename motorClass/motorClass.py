@@ -41,7 +41,14 @@ class StepMotor:
                 self.setStep(self.Seq[j][0], self.Seq[j][1], self.Seq[j][2], self.Seq[j][3])
                 time.sleep(delay)
         self.setStep(0, 0, 0, 0)
-
+    
+    def backward(self, delay, steps):
+        for i in range(steps):
+            for j in reversed(self.StepCount):
+                self.setStep(self.Seq[j][0], self.Seq[j][1], self.Seq[j][2], self.Seq[j][3])
+                time.sleep(delay)
+        self.setStep(0, 0, 0, 0)
+        
 if __name__ == '__main__':
     stepM = StepMotor(4, 17, 23, 24)
     stepM.forward(0.002, 1024)
