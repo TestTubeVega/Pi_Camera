@@ -51,6 +51,7 @@ class StepMotor:
         
 if __name__ == '__main__':
     stepM = StepMotor(4, 17, 23, 24)
-    stepM.forward(0.002, 1024)
-    stepM.backward(0.002, 1024)
+    stepM.forward(0.001, 512)
+    stepM.backward(0.001, 512)
+    GPIO.cleanup()
 
